@@ -4,5 +4,10 @@
   <h2>Something has gone wrong.</h2>
   <hr/>
   <p>Please go back to the <a href="/">homepage</a></p>
+  <img
+        class="img-fluid"
+        src="{{ url_for('static', filename='oh-no.jpg') }}"
+        alt="404 error page"
+      />
 </main>
 {% endblock %}
