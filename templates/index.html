@@ -1,0 +1,124 @@
+{% extends 'base.html' %} {% block body %}
+<h2>Add a book to my library</h2>
+<hr />
+<main>
+  <form action="/add" method="POST">
+    <p>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" />
+    </p>
+
+    <p>
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" />
+    </p>
+    <p>
+      <label for="pages">Pages:</label>
+      <input type="text" id="pages" name="pages" />
+    </p>
+
+    <p>
+      <label>Classification</label>
+      <label for="class-fic">
+        <input type="radio" id="class-fic" name="classification" value="fiction" /> Fiction
+      </label>
+
+      <label for="class-nf">
+        <input type="radio" id="class-nf" name="classification" value="non-fiction" /> Non-Fiction
+      </label>
+    </p>
+
+    <fieldset>
+      <legend>Details:</legend>
+      <label for="own">
+        <input
+          type="checkbox"
+          id="own"
+          name="details"
+          value="own"
+        />
+        I own this book
+      </label>
+
+      <label for="read">
+        <input
+          type="checkbox"
+          id="read"
+          name="details"
+          value="read"
+        />
+        I've read this book
+      </label>
+
+      <label for="like">
+        <input
+          type="checkbox"
+          id="like"
+          name="details"
+          value="like"
+        />
+        I like this book
+      </label>
+
+      <label for="recommend">
+        <input
+          type="checkbox"
+          id="recommend"
+          name="details"
+          value="recommend"
+        />
+        I would recommend this book to others
+      </label>
+    </fieldset>
+
+
+    <p>
+      <label for="acquisition">
+        How did I get this book?
+        <select name="acquisition" id="acquisition">
+          <option value="" selected>- Select an option -</option>
+          <option value="purchased">I purchased it</option>
+          <option value="gift">It was a gift</option>
+          <option value="library">I checked it out from the library</option>
+          <option value="loan">A friend loaned it to me</option>
+        </select>
+      </label>
+    </p>
+
+    
+    <p><input type="submit" id="submit" value="Submit" /></p>
+
+  </form>
+
+  <br /><br />
+  {% if books %}
+  <h3>List of books</h3>
+  <hr />
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Classification</th>
+        <th>Details</th>
+        <th>Acquisition</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for book in books %}
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.pages }}</td>
+        <td>{{ book.classification }}</td>
+        <td>{{ book.details }}</td>
+        <td>{{ book.acquisition }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</main>
+{% endblock %}

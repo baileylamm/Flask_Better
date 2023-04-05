@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
+    <title>{{ pageTitle }}</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <nav>  <a href="/">Home</a>  |  <a href="/about">About</a> </nav>
+    <p>&nbsp;</p>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div
+      class="alert alert-{{category}} alert-dismissible fade show"
+      id="flash"
+      role="alert"
+      onclick="removeFlash()"
+    >
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %} {% block body %} {% endblock %}
+  </div>
+  <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function removeFlash() {
+        const element = document.getElementById("flash");
+        element.remove();
+      }
+    </script>
+    <script>
+      window.setTimeout(function () {
+        document.getElementById("flash").style.display = "none";
+      }, 4000);
+    </script>
+  </body>
+
+</html>
