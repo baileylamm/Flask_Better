@@ -1,15 +1,13 @@
-# Olivia Dachtler and Olivia Kremer 
-
-Basic Python Flask web application where users can track the books they've read. 
-
----
-This is a project to track the books in a personal library. We created a webform that track the book information and feelings about the book. After submitting a book to the library, it shows up at the bottom with all of the information. The project helped us learn about dynamic web applications, user experience, and user interfaces.
+# Library of books - Kayla Van Langen and Bailey Lamm
+  
+Basic Python Flask web application where users can track the books they've own and read.  
 
 ---
-![Library application photo]("Library Application Photo")
 
+I completed this project as part of Digital Product Management class. To learn about dynamic web applications, user experience, and user interfaces.  
 
-## Instructions to run application
+---
+## Instruction to run the application  
 
 1. Clone this repository to local computer
 
@@ -30,13 +28,14 @@ This is a project to track the books in a personal library. We created a webform
    - `flask run`
    - `python app.py`
 
-9. Use the application by visiting it in your web browser
+6. Use the application by visiting the URL in your web browser
 
-### TO DO 
+### TO-DO  
+Features to be added.  
 
-- [ ] ~~Catch all selected activities in /add and put them into the list~~ 
-- [ ] About page
-- [ ] Styling using Bootstrap 5 frameowkr 
+- [x] ~~Catch all selected activities in /add and put them into the list~~
+- [x] ~~About page~~
+- [ ] Styling using Bootstrap 5 framework
 - [ ] Custom error messages
-- [ ] Flask messages 
+- [ ] Flash messages
 - [ ] API
